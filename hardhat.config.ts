@@ -6,6 +6,7 @@ import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
+import "hardhat-dependency-compiler";
 
 dotenv.config();
 
@@ -37,6 +38,9 @@ const config: HardhatUserConfig = {
   },
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY,
+  },
+  dependencyCompiler: {
+    paths: ["@openzeppelin/contracts/token/ERC20/IERC20.sol"],
   },
 };
 
