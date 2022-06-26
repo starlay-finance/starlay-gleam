@@ -18,6 +18,10 @@ contract Distributor is Ownable {
         uint256 amount;
     }
 
+    event Distributed(uint256 distributedIdx);
+    event Refunded(address to, uint256 amount);
+    event DistributionAmountAdded(uint256 distributeeIdx);
+
     constructor(address _rewardToken) {
         rewardToken = IERC20(_rewardToken);
     }
@@ -30,6 +34,7 @@ contract Distributor is Ownable {
             );
             distributedIdx++;
         }
+        emit Distributed(distributedIdx);
     }
 
     function totalDistributionAmount()
@@ -56,6 +61,7 @@ contract Distributor is Ownable {
             );
             distributedIdx++;
         }
+        emit Distributed(distributedIdx);
     }
 
     function min(uint256 one, uint256 another) internal pure returns (uint256) {
@@ -77,6 +83,7 @@ contract Distributor is Ownable {
                 amounts[i]
             );
         }
+        emit DistributionAmountAdded(distributeeIdx);
     }
 
     function _distribute(address to, uint256 amount) internal {
