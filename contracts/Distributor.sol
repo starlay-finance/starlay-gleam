@@ -49,6 +49,7 @@ contract Distributor is Ownable {
 
     function refund(uint256 amount) public onlyOwner {
         rewardToken.transfer(owner(), amount);
+        emit Refunded(owner(), amount);
     }
 
     function distributeTo(uint256 size) external {
