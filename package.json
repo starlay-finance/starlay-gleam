@@ -12,6 +12,8 @@
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "chai": "^4.3.6",
+    "csv-parse": "^5.2.2",
+    "csv-parser": "^3.0.0",
     "dotenv": "^16.0.1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
